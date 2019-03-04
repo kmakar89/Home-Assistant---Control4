@@ -1,0 +1,148 @@
+python_script:
+
+# Service
+c4_services:
+
+
+input_select:
+  garage_radio_stations:
+    name: Radio Station
+    icon: mdi:radio
+    options:
+      - 94.9
+      - 99.5
+      - 103.5
+      - 105.5
+      - 106.3 
+      - 107.3
+  garage_c4_input:
+    name: Audio Input
+    options:
+      - Tuner
+      - Volumio
+      - Bluetooth
+  garage_amp_input:
+    name: Zone Input
+    options:
+      - 1
+      - 3
+      - 4
+  gr_radio_stations:
+    name: Radio Station
+    icon: mdi:radio
+    options:
+      - 94.9
+      - 99.5
+      - 103.5
+      - 105.5
+      - 106.3 
+      - 107.3
+  gr_c4_input:
+    name: Audio Input
+    options:
+      - Tuner
+      - Volumio
+      - Bluetooth
+  gr_amp_input:
+    name: Zone Input
+    options:
+      - 2
+      - 3
+      - 4
+  lanai_radio_stations:
+    name: Radio Station
+    icon: mdi:radio
+    options:
+      - 94.9
+      - 99.5
+      - 103.5
+      - 105.5
+      - 106.3 
+      - 107.3
+  lanai_c4_input:
+    name: Audio Input
+    options:
+      - Tuner
+      - Volumio
+      - Bluetooth
+  lanai_amp_input:
+    name: Zone Input
+    options:
+      - 2
+      - 3
+      - 4
+      
+input_number:
+  garage_amp_volume:
+    name: Volume
+    min: 0
+    max: 1
+    step: .01
+    initial: .04
+  gr_amp_volume:
+    name: Volume
+    min: 0
+    max: 1
+    step: .01
+    initial: .04
+  lanai_amp_volume:
+    name: Volume
+    min: 0
+    max: 1
+    step: .01
+    initial: .04
+    
+input_boolean:
+  switch_state_1:
+    name: Garage Switch
+  switch_state_2:
+    name: Great Room Switch
+  switch_state_3:
+    name: Lanai Switch
+    
+switch:
+  - platform: template
+    switches:
+      garage_switch:
+        friendly_name: Garage
+        value_template: "{{ is_state('input_boolean.switch_state_1', 'on') }}"
+        turn_on:
+          - service: c4_services.handle_garage_amp_on_select
+          - service: input_boolean.turn_on
+            data:
+              entity_id: input_boolean.switch_state_1
+        turn_off:
+          - service: c4_services.handle_garage_amp_off_select
+          - service: input_boolean.turn_off
+            data:
+              entity_id: input_boolean.switch_state_1
+  - platform: template
+    switches:
+      gr_switch:
+        friendly_name: Great Room
+        value_template: "{{ is_state('input_boolean.switch_state_2', 'on') }}"
+        turn_on:
+          - service: c4_services.handle_gr_amp_on_select
+          - service: input_boolean.turn_on
+            data:
+              entity_id: input_boolean.switch_state_2
+        turn_off:
+          - service: c4_services.handle_gr_amp_off_select
+          - service: input_boolean.turn_off
+            data:
+              entity_id: input_boolean.switch_state_2
+  - platform: template
+    switches:
+      lanai_switch:
+        friendly_name: Lanai
+        value_template: "{{ is_state('input_boolean.switch_state_3', 'on') }}"
+        turn_on:
+          - service: c4_services.handle_lanai_amp_on_select
+          - service: input_boolean.turn_on
+            data:
+              entity_id: input_boolean.switch_state_3
+        turn_off:
+          - service: c4_services.handle_lanai_amp_off_select
+          - service: input_boolean.turn_off
+            data:
+              entity_id: input_boolean.switch_state_3

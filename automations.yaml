@@ -1,0 +1,189 @@
+- id: Garage Amp Volume
+  alias: Garage Amp Volume
+  trigger:
+    platform: state
+    entity_id: input_number.garage_amp_volume
+  action:
+  - service: c4_services.handle_garage_amp_volume_select
+- id: Garage Radio Tuner
+  alias: Garage Radio Tuner
+  trigger:
+    platform: state
+    entity_id: input_select.garage_radio_stations
+  action:
+    service: c4_services.handle_garage_tuner_channel_select
+- id: Garage AMP Input
+  alias: Garage Amp Input
+  trigger:
+    platform: state
+    entity_id: input_select.garage_amp_input
+  action:
+    service: c4_services.handle_garage_amp_input_select
+- id: Garage AMP On
+  alias: Garage AMP On
+  trigger:
+    platform: state
+    entity_id: input_select.garage_amp_on
+  action:
+    service: c4_services.handle_garage_amp_on_select
+- id: Garage AMP Off
+  alias: Garage Amp Off
+  trigger:
+    platform: state
+    entity_id: input_select.garage_amp_off
+  action:
+    service: c4_services.handle_garage_amp_off_select
+- id: Garage Amp Input Override
+  alias: Garage Amp Input Override
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: input_select.garage_c4_input
+  action:
+    service: input_select.select_option
+    entity_id: input_select.garage_amp_input
+    data_template:
+      option: >-
+        {% if is_state('input_select.garage_c4_input', 'Tuner') %}1
+        {% elif is_state('input_select.garage_c4_input', 'Tuner 2') %}2
+        {% elif is_state('input_select.garage_c4_input', 'Volumio') %}3
+        {% elif is_state('input_select.garage_c4_input', 'Bluetooth') %}4
+        {% else %}1 ### whatever you want to be default
+        {%- endif %}
+- id: Garage Volume to 0
+  alias: Garage Volume to 0
+  trigger:
+      platform: state
+      entity_id: switch.garage_switch
+      to: 'off'
+  action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.garage_amp_volume
+        value: .04
+- id: Great Room Amp Volume
+  alias: Great Room Amp Volume
+  trigger:
+    platform: state
+    entity_id: input_number.gr_amp_volume
+  action:
+  - service: c4_services.handle_gr_amp_volume_select
+- id: Great Room Radio Tuner
+  alias: Great Room Radio Tuner
+  trigger:
+    platform: state
+    entity_id: input_select.gr_radio_stations
+  action:
+    service: c4_services.handle_gr_tuner_channel_select
+- id: Great Room AMP Input
+  alias: Great Room Amp Input
+  trigger:
+    platform: state
+    entity_id: input_select.gr_amp_input
+  action:
+    service: c4_services.handle_gr_amp_input_select
+- id: Great Room AMP On
+  alias: Great Room AMP On
+  trigger:
+    platform: state
+    entity_id: input_select.gr_amp_on
+  action:
+    service: c4_services.handle_gr_amp_on_select
+- id: Great Room AMP Off
+  alias: Great Room Amp Off
+  trigger:
+    platform: state
+    entity_id: input_select.gr_amp_off
+  action:
+    service: c4_services.handle_gr_amp_off_select
+- id: Great Room Amp Input Override
+  alias: Great Room Amp Input Override
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: input_select.gr_c4_input
+  action:
+    service: input_select.select_option
+    entity_id: input_select.gr_amp_input
+    data_template:
+      option: >-
+        {% if is_state('input_select.gr_c4_input', 'Tuner 1') %}1
+        {% elif is_state('input_select.gr_c4_input', 'Tuner') %}2
+        {% elif is_state('input_select.gr_c4_input', 'Volumio') %}3
+        {% elif is_state('input_select.gr_c4_input', 'Bluetooth') %}4
+        {% else %}2 ### whatever you want to be default
+        {%- endif %}
+- id: Great Room Volume to 0
+  alias: Great Room Volume to 0
+  trigger:
+      platform: state
+      entity_id: switch.gr_switch
+      to: 'off'
+  action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.gr_amp_volume
+        value: .04
+- id: Lanai Amp Volume
+  alias: Lanai Amp Volume
+  trigger:
+    platform: state
+    entity_id: input_number.lanai_amp_volume
+  action:
+  - service: c4_services.handle_lanai_amp_volume_select
+- id: Lanai Radio Tuner
+  alias: Lanai Radio Tuner
+  trigger:
+    platform: state
+    entity_id: input_select.lanai_radio_stations
+  action:
+    service: c4_services.handle_lanai_tuner_channel_select
+- id: Lanai AMP Input
+  alias: Lanai Amp Input
+  trigger:
+    platform: state
+    entity_id: input_select.lanai_amp_input
+  action:
+    service: c4_services.handle_lanai_amp_input_select
+- id: Lanai AMP On
+  alias: Lanai AMP On
+  trigger:
+    platform: state
+    entity_id: input_select.lanai_amp_on
+  action:
+    service: c4_services.handle_lanai_amp_on_select
+- id: Lanai AMP Off
+  alias: Lanai Amp Off
+  trigger:
+    platform: state
+    entity_id: input_select.lanai_amp_off
+  action:
+    service: c4_services.handle_lanai_amp_off_select
+- id: Lanai Amp Input Override
+  alias: Lanai Amp Input Override
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: input_select.lanai_c4_input
+  action:
+    service: input_select.select_option
+    entity_id: input_select.lanai_amp_input
+    data_template:
+      option: >-
+        {% if is_state('input_select.lanai_c4_input', 'Tuner 1') %}1
+        {% elif is_state('input_select.lanai_c4_input', 'Tuner') %}2
+        {% elif is_state('input_select.lanai_c4_input', 'Volumio') %}3
+        {% elif is_state('input_select.lanai_c4_input', 'Bluetooth') %}4
+        {% else %}2 ### whatever you want to be default
+        {%- endif %}
+- id: Lanai Volume to 0
+  alias: Lanai Volume to 0
+  trigger:
+      platform: state
+      entity_id: switch.lanai_switch
+      to: 'off'
+  action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.lanai_amp_volume
+        value: .04
