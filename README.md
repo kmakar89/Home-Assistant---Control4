@@ -7,4 +7,4 @@ These files are written specifically for my setup, but can be modified easily to
 <img src="https://github.com/kmakar89/Home-Assistant---Control4/blob/master/ha_c4.png">
 
 
-https://github.com/kmakar89/Home-Assistant---Control4/blob/master/ha_c4.png
+
