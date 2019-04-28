@@ -9,7 +9,7 @@ These files are written specifically for my setup, but can be modified easily to
 Stop Home Assistant<br>
 Remove/Rename/Delete c4_services.py<br>
 Copy the c4_services folder into the custom_components folder<br>
-Open __ init __.py (underscore underscore init underscore underscore.py) and change to the IP Address of your AMP and Tuner (if using a tuner).<br>
+Open __ init __.py (underscore underscore init underscore underscore.py) and change the IP Address of your AMP and Tuner in all instances.<br>
 Start Home Assistant<br>
 
 If successful, a __ pycache __ (underscore underscore pycache underscore underscore) folder will be automatically created registering the c4_services.<br>
