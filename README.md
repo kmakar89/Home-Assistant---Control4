@@ -14,7 +14,7 @@ Start Home Assistant<br>
 
 If successful, a __ pycache __ (underscore underscore pycache underscore underscore) folder will be automatically created registering the c4_services.<br>
 
-Response is a little slower (icon indicator) for the booleen switches as now it's using the new hass services.
+Response is a little slower (for the power icon indicator) using booleen switches as now it's using the new hass services.
 
 <img src="https://github.com/kmakar89/Home-Assistant---Control4/blob/master/ha_c4.png">
 
