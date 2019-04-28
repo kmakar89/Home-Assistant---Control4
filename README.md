@@ -6,10 +6,10 @@ These files are written specifically for my setup, but can be modified easily to
 
 ***** 0.92 Break Change Fix *****
 
-Stop Home Assistant
-Remove/Rename/Delete c4_services.py
-Copy the c4_services folder into the custom_components folder
-Start Home Assistant
+Stop Home Assistant<br>
+Remove/Rename/Delete c4_services.py<br>
+Copy the c4_services folder into the custom_components folder<br>
+Start Home Assistant<br>
 
 If successful, a __pycache__ folder will be automatically created registering the c4_services.
 
