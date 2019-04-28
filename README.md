@@ -11,7 +11,9 @@ Remove/Rename/Delete c4_services.py<br>
 Copy the c4_services folder into the custom_components folder<br>
 Start Home Assistant<br>
 
-If successful, a __pycache__ folder will be automatically created registering the c4_services.
+If successful, a __pycache__ folder will be automatically created registering the c4_services.<br>
+
+Response is a little slower (icon indicator) for the booleen switches as now it's using the new hass services.
 
 <img src="https://github.com/kmakar89/Home-Assistant---Control4/blob/master/ha_c4.png">
 
