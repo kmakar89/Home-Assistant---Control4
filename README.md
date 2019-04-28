@@ -4,6 +4,15 @@ These files will enable you to use the Control4 (4) Zone Matrix Amplifier and Co
 
 These files are written specifically for my setup, but can be modified easily to accomidate your setup. This is based on a Control 4 (4) Zone Matrix Amplifier and Control4 Tuner (Tuner 1, Tuner 2, and XM radio), but since I've never used XM I have no writeup for that. This is based on what Matt from Smart(ish)Home orginally did with OpenHab and Home Assistant (this wouldn't have been possible without his work), and a few others who gave me pointers and fixes (thanks Walrus_Parka).
 
+***** 0.92 Break Change Fix *****
+
+Stop Home Assistant
+Remove/Rename/Delete c4_services.py
+Copy the c4_services folder into the custom_components folder
+Start Home Assistant
+
+If successful, a __pycache__ folder will be automatically created registering the c4_services.
+
 <img src="https://github.com/kmakar89/Home-Assistant---Control4/blob/master/ha_c4.png">
 
 
