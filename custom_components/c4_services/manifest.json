@@ -3,6 +3,6 @@
   "name": "c4_services",
   "documentation": "https://github.com/kmakar89/Home-Assistant---Control4",
   "dependencies": [],
-  "codeowners": ["@kmakar89"],
+  "codeowners": ["@bigmac"],
   "requirements": []
 }
